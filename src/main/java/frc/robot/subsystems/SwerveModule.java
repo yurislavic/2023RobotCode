@@ -80,7 +80,7 @@ public class SwerveModule extends SubsystemBase {
 
     m_turnEncoder = m_turnMotor.getEncoder();
     m_turnEncoder.setPositionConversionFactor(kTurnRotationsToDegrees);
-    m_turnEncoder.setVelocityConversionFactor(kTurnRotationsToDegrees / 60);
+    m_turnEncoder.setVelocityConversionFactor(kTurnRotationsToDegrees / 60.0);
 
     m_driveController = m_driveMotor.getPIDController();
     m_turnController = m_turnMotor.getPIDController();

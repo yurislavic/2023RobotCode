@@ -40,28 +40,28 @@ public class SwerveDrive extends SubsystemBase {
                       new CANSparkMax(CAN.frontLeftTurnMotor, CANSparkMaxLowLevel.MotorType.kBrushless),
                       new CANSparkMax(CAN.frontLeftDriveMotor, CANSparkMaxLowLevel.MotorType.kBrushless),
                       new CANCoder(CAN.frontLeftCanCoder),
-                      0),
+                      -92.109),
               ModulePosition.FRONT_RIGHT,
                   new SwerveModule(
                       1,
                       new CANSparkMax(CAN.frontRightTurnMotor, CANSparkMaxLowLevel.MotorType.kBrushless),
                       new CANSparkMax(CAN.frontRightDriveMotor, CANSparkMaxLowLevel.MotorType.kBrushless),
                       new CANCoder(CAN.frontRightCanCoder),
-                      0),
+                      -97.383),
               ModulePosition.BACK_LEFT,
                   new SwerveModule(
                       2,
                       new CANSparkMax(CAN.backLeftTurnMotor, CANSparkMaxLowLevel.MotorType.kBrushless),
                       new CANSparkMax(CAN.backLeftDriveMotor, CANSparkMaxLowLevel.MotorType.kBrushless),
                       new CANCoder(CAN.backLeftCanCoder),
-                      0),
+                      -198.369),
               ModulePosition.BACK_RIGHT,
                   new SwerveModule(
                       3,
                       new CANSparkMax(CAN.backRightTurnMotor, CANSparkMaxLowLevel.MotorType.kBrushless),
                       new CANSparkMax(CAN.backRightDriveMotor, CANSparkMaxLowLevel.MotorType.kBrushless),
                       new CANCoder(CAN.backRightCanCoder),
-                      0)));
+                      -112.500)));
 
   private Pigeon2 m_pigeon = new Pigeon2(CAN.pigeon);
 

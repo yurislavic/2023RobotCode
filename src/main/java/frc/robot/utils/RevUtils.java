@@ -8,9 +8,9 @@ import edu.wpi.first.math.kinematics.SwerveModuleState;
 public final class RevUtils {
   public static void setTurnMotorConfig(CANSparkMax motorController) {
     motorController.getPIDController().setFF(0.0);
-    motorController.getPIDController().setP(0.6);
+    motorController.getPIDController().setP(0.2);
     motorController.getPIDController().setI(0.0);
-    motorController.getPIDController().setD(12.0);
+    // motorController.getPIDController().setD(12.0);
 
     motorController.setPeriodicFramePeriod(CANSparkMaxLowLevel.PeriodicFrame.kStatus0, 100);
     motorController.setPeriodicFramePeriod(CANSparkMaxLowLevel.PeriodicFrame.kStatus1, 20);
