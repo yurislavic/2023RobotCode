@@ -23,6 +23,7 @@ import edu.wpi.first.math.kinematics.SwerveDriveOdometry;
 import edu.wpi.first.math.kinematics.SwerveModulePosition;
 import edu.wpi.first.math.kinematics.SwerveModuleState;
 import edu.wpi.first.math.util.Units;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.CAN;
 import java.util.HashMap;
@@ -40,28 +41,28 @@ public class SwerveDrive extends SubsystemBase {
                       new CANSparkMax(CAN.frontLeftTurnMotor, CANSparkMaxLowLevel.MotorType.kBrushless),
                       new CANSparkMax(CAN.frontLeftDriveMotor, CANSparkMaxLowLevel.MotorType.kBrushless),
                       new CANCoder(CAN.frontLeftCanCoder),
-                      -92.109),
+                      274.482),
               ModulePosition.FRONT_RIGHT,
                   new SwerveModule(
                       1,
                       new CANSparkMax(CAN.frontRightTurnMotor, CANSparkMaxLowLevel.MotorType.kBrushless),
                       new CANSparkMax(CAN.frontRightDriveMotor, CANSparkMaxLowLevel.MotorType.kBrushless),
                       new CANCoder(CAN.frontRightCanCoder),
-                      -97.383),
+                      275.977),
               ModulePosition.BACK_LEFT,
                   new SwerveModule(
                       2,
                       new CANSparkMax(CAN.backLeftTurnMotor, CANSparkMaxLowLevel.MotorType.kBrushless),
                       new CANSparkMax(CAN.backLeftDriveMotor, CANSparkMaxLowLevel.MotorType.kBrushless),
                       new CANCoder(CAN.backLeftCanCoder),
-                      -198.369),
+                      24.961),
               ModulePosition.BACK_RIGHT,
                   new SwerveModule(
                       3,
                       new CANSparkMax(CAN.backRightTurnMotor, CANSparkMaxLowLevel.MotorType.kBrushless),
                       new CANSparkMax(CAN.backRightDriveMotor, CANSparkMaxLowLevel.MotorType.kBrushless),
                       new CANCoder(CAN.backRightCanCoder),
-                      -112.500)));
+                      292.061)));
 
   private Pigeon2 m_pigeon = new Pigeon2(CAN.pigeon);
 
@@ -165,7 +166,9 @@ public class SwerveDrive extends SubsystemBase {
     }
   }
 
-  private void updateSmartDashboard() {}
+  private void updateSmartDashboard() {
+    SmartDashboard.putNumber("Chassis Heading", getHeadingDegrees());
+  }
 
   @Override
   public void periodic() {

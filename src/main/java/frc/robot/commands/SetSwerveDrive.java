@@ -37,13 +37,13 @@ public class SetSwerveDrive extends CommandBase {
   @Override
   public void execute() {
     double throttle =
-        MathUtil.applyDeadband(Math.abs(m_throttleInput.getAsDouble()), 0.05)
+        MathUtil.applyDeadband(Math.abs(m_throttleInput.getAsDouble()), 0.075)
             * Math.signum(m_throttleInput.getAsDouble());
     double strafe =
-        MathUtil.applyDeadband(Math.abs(m_strafeInput.getAsDouble()), 0.05)
+        MathUtil.applyDeadband(Math.abs(m_strafeInput.getAsDouble()), 0.075)
             * Math.signum(m_strafeInput.getAsDouble());
     double rotation =
-        MathUtil.applyDeadband(Math.abs(m_rotationInput.getAsDouble()), 0.05)
+        MathUtil.applyDeadband(Math.abs(m_rotationInput.getAsDouble()), 0.075)
             * Math.signum(m_rotationInput.getAsDouble());
 
     m_swerveDrive.drive(throttle, strafe, rotation, false, false);

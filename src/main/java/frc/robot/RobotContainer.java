@@ -73,9 +73,9 @@ public class RobotContainer {
     m_swerveDrive.setDefaultCommand(
         new SetSwerveDrive(
             m_swerveDrive,
-            () -> -testController.getLeftY(),
-            () -> -testController.getLeftX(),
-            () -> -testController.getRightX()));
+            () -> -testController.getRawAxis(1),
+            () -> -testController.getRawAxis(0),
+            () -> testController.getRawAxis(2)));
     m_fieldSim.initSim();
   }
 
